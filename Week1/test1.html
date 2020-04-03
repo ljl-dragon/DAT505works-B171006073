@@ -1,0 +1,79 @@
+<html>
+<head>
+</head>
+<body>
+  <script type = "text/javascript">
+  function CheckNumber(){
+    var pnumber =document.getElementById("pnumber").value;
+  //CHECK 11 DIGIT
+  if(pnumber.length < 11){
+    document.getElementById("showtxt").innerHTML="less than 11 DIGIT";
+  }
+  else if(pnumber.substr(0,1)!="1"){
+    document.getElementById("showtxt").innerHTML="it's not beginning with 1";
+  }
+  else if(isNaN(pnumber)){
+    document.getElementById("showtxt").innerHTML="it's not a number";
+  }
+  else {
+    document.getElementById("showtxt").innerHTML="Fine";
+  }
+}
+
+function CheckYear(){
+  var disyear = parseInt(document.getElementById("pyear").value);
+  disyear = disyear % 12;
+  switch (disyear) {
+    case 0:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：猴";
+      break;
+    case 1:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：鸡";
+      break;
+    case 2:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：狗";
+      break;
+    case 3:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：猪";
+      break;
+    case 4:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：鼠";
+      break;
+    case 5:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：牛";
+      break;
+    case 6:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：虎";
+      break;
+    case 7:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：兔";
+      break;
+    case 8:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：龙";
+      break;
+    case 9:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：蛇";
+      break;
+    case 10:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：马";
+      break;
+    case 11:
+      document.getElementById("showZodiac").innerHTML = "你的生肖是：羊";
+      break;
+    default:
+
+  }
+}
+</script>
+<form id="form1">
+  Input your PhoneNumber:<br><input type="text" id="pnumber">
+  <input type="button" value="CHECK" onclick="CheckNumber()">
+  <div id="showtxt"></div>
+  <br>
+  Input your BirthYear:<br><input type="text" id="pyear">
+  <input type="button" value="CHECK" onclick="CheckYear()">
+  <div id="showZodiac"></div>
+</form>
+
+</body>
+</html>
